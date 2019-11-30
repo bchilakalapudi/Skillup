@@ -1,4 +1,4 @@
-package com.bchilakalapudi.itquiz;
+package com.bchilakalapudi.skillup;
 
 import org.junit.Test;
 

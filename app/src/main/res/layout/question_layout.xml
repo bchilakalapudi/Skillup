@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="20dp" />
+
+        <CheckBox
+            android:id="@+id/a_option_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nextFocusLeft="@id/a_option_check"
+            android:text="Option A" />
+
+        <CheckBox
+            android:id="@+id/b_option_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option B" />
+
+        <CheckBox
+            android:id="@+id/c_option_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option C" />
+
+        <CheckBox
+            android:id="@+id/d_option_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option D" />
+
+        <CheckBox
+            android:id="@+id/e_option_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option E" />
+
+        <CheckBox
+            android:id="@+id/f_option_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option F" />
+
+        <CheckBox
+            android:id="@+id/g_option_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option G" />
+
+        <CheckBox
+            android:id="@+id/h_option_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option H" />
+
+        <TextView
+            android:id="@+id/answer_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Answer"
+            android:textColor="#4CAF50"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+</RelativeLayout>
