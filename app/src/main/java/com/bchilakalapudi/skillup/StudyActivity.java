@@ -8,20 +8,14 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -29,14 +23,15 @@ public class StudyActivity extends AppCompatActivity {
     private ListView listView;
     private ArrayList<QuestionModel> list;
     private QuestionModelAdapter adapter;
+    private String examname="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study);
         Intent in=getIntent();
-        String examname=in.getStringExtra("exam");
-        TextView title=(TextView)findViewById(R.id.study_title_txt);
-        title.setText(""+examname);
+        examname=in.getStringExtra("exam");
+     //   TextView title=(TextView)findViewById(R.id.study_title_txt);
+     //   title.setText(""+examname);
         Log.d("exam",""+examname);
         list = new ArrayList<>();
 
@@ -118,8 +113,8 @@ public class StudyActivity extends AppCompatActivity {
                 jIndex=x;
 
             dialog = new ProgressDialog(StudyActivity.this);
-            dialog.setTitle("Hey Wait Please..."+x);
-            dialog.setMessage("I am getting your JSON");
+            dialog.setTitle("Please wait...");
+            dialog.setMessage("Loading");
             dialog.show();
         }
 
@@ -130,7 +125,31 @@ public class StudyActivity extends AppCompatActivity {
             /**
              * Getting JSON Object from Web Using okHttp
              */
-            JSONObject jsonObject = JSONParser.getDataFromWeb();
+            JSONObject jsonObject =null;
+            if(examname!=null && examname.equals("Salesforce")) {
+                jsonObject = SalesforceJSONParser.getDataFromWeb();
+            }
+            if(examname!=null && examname.equals("Vlocity")) {
+                jsonObject = VlocityJSONParser.getDataFromWeb();
+            }
+            if(examname!=null && examname.equals("Java")) {
+                jsonObject = JavaJSONParser.getDataFromWeb();
+            }
+            if(examname!=null && examname.equals("PHP")) {
+                jsonObject = PHPJSONParser.getDataFromWeb();
+            }
+            if(examname!=null && examname.equals("DotNet")) {
+                jsonObject = DOTNETJSONParser.getDataFromWeb();
+            }
+            if(examname!=null && examname.equals("MySQL")) {
+                jsonObject = MYSQLJSONParser.getDataFromWeb();
+            }
+            if(examname!=null && examname.equals("HTML")) {
+                jsonObject = HTMLJSONParser.getDataFromWeb();
+            }
+            if(examname!=null && examname.equals("CSS")) {
+                jsonObject = CSSJSONParser.getDataFromWeb();
+            }
             Log.d("jsonObject",""+jsonObject);
             try {
                 /**
@@ -145,7 +164,7 @@ public class StudyActivity extends AppCompatActivity {
                          * Getting Array named "contacts" From MAIN Json Object
                          */
 
-                        JSONArray array = jsonObject.getJSONArray(Keys.KEY_CERTIFIED_SALESFORCE_PLATFORM_DEVELOPER_1);
+                        JSONArray array = jsonObject.getJSONArray(examname);
                         Log.d("JSONArray",""+array.toString());
                         /**
                          * Check Length of Array...
@@ -175,6 +194,10 @@ public class StudyActivity extends AppCompatActivity {
                                 String b = innerObject.getString(Keys.KEY_B);
                                 String c = innerObject.getString(Keys.KEY_C);
                                 String d = innerObject.getString(Keys.KEY_D);
+                                String e = innerObject.getString(Keys.KEY_E);
+                                String f = innerObject.getString(Keys.KEY_F);
+                                String g = innerObject.getString(Keys.KEY_G);
+                                String h = innerObject.getString(Keys.KEY_H);
                                 String answer1 = innerObject.getString(Keys.KEY_ANSWER1);
                                 String answer2 = innerObject.getString(Keys.KEY_ANSWER2);
                                 String answer3 = innerObject.getString(Keys.KEY_ANSWER3);
@@ -191,6 +214,11 @@ public class StudyActivity extends AppCompatActivity {
                                 model.setB_option(""+b);
                                 model.setC_option(""+c);
                                 model.setD_option(""+d);
+                                model.setE_option(""+e);
+                                model.setF_option(""+f);
+                                model.setG_option(""+g);
+                                model.setH_option(""+h);
+
                                 String ans="Answer:\n";
                                 if(!answer1.equals("")){
                                    ans+=answer1;
@@ -216,7 +244,7 @@ public class StudyActivity extends AppCompatActivity {
 
                 }
             } catch (JSONException je) {
-                Log.i(JSONParser.TAG, "" + je.getLocalizedMessage());
+                Log.i("Exception", "" + je.getLocalizedMessage());
             } catch (Exception e) {
                 e.printStackTrace();
             }

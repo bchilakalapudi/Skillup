@@ -7,118 +7,135 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="160dp"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_bank_exams"
+                android:id="@+id/home_html_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/bank"
-                android:text="Bank \nExams"
-                android:textSize="20dp" />
-
-            <Button
-                android:id="@+id/btn_salesforce"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/salesforce"
-                android:text="SFDC\nExams"
-                android:textSize="20dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_java"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/java"
-                android:text="Java\nExams"
-                android:textSize="20dp" />
-
-            <Button
-                android:id="@+id/btn_mysql"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/mysql"
-                android:text="MySQL\nExams"
-                android:textSize="20dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_html"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="#00F8F6F6"
                 android:drawableTop="@drawable/html"
-                android:text="HTML\nExams"
-                android:textSize="20dp" />
+                android:text="HTML"
+                android:textSize="15dp" />
 
             <Button
-                android:id="@+id/btn_css"
+                android:id="@+id/home_css_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="#00F8F6F6"
                 android:drawableTop="@drawable/css"
-                android:text="CSS\nExams"
-                android:textSize="20dp" />
+                android:text="CSS"
+                android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="160dp"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_govt"
+                android:id="@+id/home_java_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/govtjobs"
-                android:text="GOVT\nJobs"
-                android:textSize="20dp" />
+                android:background="#00F8F6F6"
+                android:drawableTop="@drawable/java"
+                android:text="JAVA"
+                android:textSize="15dp" />
 
             <Button
-                android:id="@+id/btn_pvt"
+                android:id="@+id/home_dotnet_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:drawableTop="@drawable/privatejobs"
-                android:text="PVT \nJobs"
-                android:textSize="20dp" />
+                android:background="#00F8F6F6"
+                android:drawableTop="@drawable/dotnet"
+                android:text=".NET"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/home_salesforce_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#00F8F6F6"
+                android:drawableTop="@drawable/salesforce"
+                android:text="SFDC"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/home_vlocity_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#00F8F6F6"
+                android:drawableTop="@drawable/vlocity"
+                android:text="VLOCITY"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#00F8F6F6"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/home_php_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#00F8F6F6"
+                android:drawableTop="@drawable/php"
+                android:text="PHP"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/home_mysql_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#00F8F6F6"
+                android:drawableTop="@drawable/mysql"
+                android:text="JS"
+                android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#4CAF50"
             android:orientation="horizontal">
 
             <com.google.android.gms.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/adView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                ads:adSize="BANNER"
-                ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
-                android:layout_weight="1" />
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-6536530345445965/8866439728" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

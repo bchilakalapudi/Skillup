@@ -2,6 +2,7 @@ package com.bchilakalapudi.skillup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +28,8 @@ import com.google.android.gms.ads.formats.UnifiedNativeAdView;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
-public class BankActivity extends AppCompatActivity {
+
+public class VlocityActivity extends AppCompatActivity {
     private static final String ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
 
     private Button refresh;
@@ -39,9 +41,9 @@ public class BankActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bank_exams);
+        setContentView(R.layout.activity_vlocity);
 
-       // adLoader.loadAd(new AdRequest.Builder().addTestDevice("A03E8CB1F034A0790951F2713CE1E0CE").build());
+        // adLoader.loadAd(new AdRequest.Builder().addTestDevice("A03E8CB1F034A0790951F2713CE1E0CE").build());
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -60,6 +62,16 @@ public class BankActivity extends AppCompatActivity {
         });*/
 
         refreshAd();
+
+        Button vlocity_start_btn = findViewById(R.id.vlocity_start_btn);
+        vlocity_start_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View unusedView) {
+                Intent in=new Intent(VlocityActivity.this,StudyActivity.class);
+                in.putExtra("exam",Keys.KEY_VLOCITY);
+                startActivity(in);
+            }
+        });
     }
     /**
      * Populates a {@link UnifiedNativeAdView} object with data from a given
@@ -161,14 +173,14 @@ public class BankActivity extends AppCompatActivity {
                 public void onVideoEnd() {
                     // Publishers should allow native ads to complete video playback before
                     // refreshing or replacing them with another ad in the same UI location.
-                   // refresh.setEnabled(true);
-                 //   videoStatus.setText("Video status: Video playback has ended.");
+                    // refresh.setEnabled(true);
+                    //   videoStatus.setText("Video status: Video playback has ended.");
                     super.onVideoEnd();
                 }
             });
         } else {
-          //  videoStatus.setText("Video status: Ad does not contain a video asset.");
-           // refresh.setEnabled(true);
+            //  videoStatus.setText("Video status: Ad does not contain a video asset.");
+            // refresh.setEnabled(true);
         }
     }
 
@@ -193,7 +205,7 @@ public class BankActivity extends AppCompatActivity {
                 }
                 nativeAd = unifiedNativeAd;
                 FrameLayout frameLayout =
-                        findViewById(R.id.fl_adplaceholder);
+                        findViewById(R.id.vlocity_fl_adplaceholder);
                 UnifiedNativeAdView adView = (UnifiedNativeAdView) getLayoutInflater()
                         .inflate(R.layout.ad_unified, null);
                 populateUnifiedNativeAdView(unifiedNativeAd, adView);
@@ -216,15 +228,15 @@ public class BankActivity extends AppCompatActivity {
         AdLoader adLoader = builder.withAdListener(new AdListener() {
             @Override
             public void onAdFailedToLoad(int errorCode) {
-              //  refresh.setEnabled(true);
-                Toast.makeText(BankActivity.this, "Failed to load native ad: "
+                //  refresh.setEnabled(true);
+                Toast.makeText(VlocityActivity.this, "Failed to load native ad: "
                         + errorCode, Toast.LENGTH_SHORT).show();
             }
         }).build();
 
         adLoader.loadAd(new AdRequest.Builder().build());
 
-       // videoStatus.setText("");
+        // videoStatus.setText("");
     }
 
     @Override

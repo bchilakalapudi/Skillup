@@ -29,7 +29,7 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 
-public class SalesforceActivity extends AppCompatActivity {
+public class DotNetActivity extends AppCompatActivity {
     private static final String ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
 
     private Button refresh;
@@ -41,7 +41,7 @@ public class SalesforceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_salesforce);
+        setContentView(R.layout.activity_dotnet);
 
         // adLoader.loadAd(new AdRequest.Builder().addTestDevice("A03E8CB1F034A0790951F2713CE1E0CE").build());
         // Initialize the Mobile Ads SDK.
@@ -63,12 +63,12 @@ public class SalesforceActivity extends AppCompatActivity {
 
         refreshAd();
 
-        Button salesforce_start_btn = findViewById(R.id.salesforce_start_btn);
-        salesforce_start_btn.setOnClickListener(new View.OnClickListener() {
+        Button dotnet_start_btn = findViewById(R.id.dotnet_start_btn);
+        dotnet_start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View unusedView) {
-                Intent in=new Intent(SalesforceActivity.this,StudyActivity.class);
-                in.putExtra("exam",Keys.KEY_SALESFORCE);
+                Intent in=new Intent(DotNetActivity.this,StudyActivity.class);
+                in.putExtra("exam",Keys.KEY_DOTNET);
                 startActivity(in);
             }
         });
@@ -205,7 +205,7 @@ public class SalesforceActivity extends AppCompatActivity {
                 }
                 nativeAd = unifiedNativeAd;
                 FrameLayout frameLayout =
-                        findViewById(R.id.sfdc_fl_adplaceholder);
+                        findViewById(R.id.dotnet_fl_adplaceholder);
                 UnifiedNativeAdView adView = (UnifiedNativeAdView) getLayoutInflater()
                         .inflate(R.layout.ad_unified, null);
                 populateUnifiedNativeAdView(unifiedNativeAd, adView);
@@ -229,7 +229,7 @@ public class SalesforceActivity extends AppCompatActivity {
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 //  refresh.setEnabled(true);
-                Toast.makeText(SalesforceActivity.this, "Failed to load native ad: "
+                Toast.makeText(DotNetActivity.this, "Failed to load native ad: "
                         + errorCode, Toast.LENGTH_SHORT).show();
             }
         }).build();

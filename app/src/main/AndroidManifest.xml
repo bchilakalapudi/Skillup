@@ -13,9 +13,15 @@
         android:roundIcon="@mipmap/skillup"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StudyActivity"></activity>
+        <activity android:name=".DotNetActivity"></activity>
+        <activity android:name=".PHPActivity" />
+        <activity android:name=".MySQLActivity" />
+        <activity android:name=".JavaActivity" />
+        <activity android:name=".VlocityActivity" />
+        <activity android:name=".CSSActivity" />
+        <activity android:name=".StudyActivity" />
         <activity android:name=".SalesforceActivity" />
-        <activity android:name=".BankActivity" />
+        <activity android:name=".HTMLActivity" />
         <activity
             android:name=".MainActivity"
             android:label="Skillup"
